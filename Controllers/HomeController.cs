@@ -28,6 +28,11 @@ namespace mission08_group3_02.Controllers
             return View();
         }
 
+        public IActionResult Quadrants()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
