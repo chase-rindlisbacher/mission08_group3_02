@@ -13,6 +13,13 @@ namespace mission08_group3_02.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        private readonly ILogger<HomeController> _logger;
+        private TaskAppContext TaskContext { get; set; }
+        public HomeController(ILogger<HomeController> logger, TaskAppContext someName)
+        {
+            _logger = logger;
+            TaContext = someName;
+        }
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
