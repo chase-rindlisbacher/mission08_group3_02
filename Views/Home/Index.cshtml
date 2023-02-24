@@ -7,17 +7,18 @@
 <div class="text-center">
     <h1 class="display-4">Stephen Covey's Time Management Matrix</h1>
 </div>
+<br /><br />
 
 <div class="parent">
     <div class="div1"></div>
-    <div class="div2">
-        <h3>URGENT</h3>
+    <div class="div2 sidelabel">
+        <h6>URGENT</h6>
     </div>
-    <div class="div3">
-        <h3>NOT URGENT</h3>
+    <div class="div3 sidelabel">
+        <h6>NOT URGENT</h6>
     </div>
-    <div class="div4">
-        <h3 class="rotate">IMPORTANT</h3>
+    <div class="div4 sidelabel rotate">
+        <h6>IMPORTANT</h6>
     </div>
     <div class="div5">
         <h3>QUADRANT 1</h3>
@@ -25,11 +26,12 @@
         {
             @if (x.Quadrant == 1)
                 {
-                        <ul>
-                            <li>@x.Task</li>
-                        </ul>
-                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a>
-                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+
+                <div class="taskbutton">        
+                        <p>@x.Task</p>
+                        <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
+                        <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
+                </div>
                     
                 }
             
@@ -42,18 +44,18 @@
         {
             @if (x.Quadrant == 2)
             {
-                    <ul>
-                        <li>@x.Task</li>
-                    </ul>
-                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a>
-                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                
+
+                <div class="taskbutton">
+                    <p>@x.Task</p>
+                    <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
+                    <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
+                </div>
             }
         }
 
-        </div>
-    <div class="div7">
-        <h3 class="rotate">NOT IMPORTANT</h3>
+    </div>
+    <div class="div7 sidelabel rotate">
+        <h6>NOT IMPORTANT</h6>
     </div>
     <div class="div8">
         <h3>QUADRANT 3</h3>
@@ -61,32 +63,32 @@
         {
             @if (x.Quadrant == 3)
             {
-                    <ul>
-                        <li>@x.Task</li>
-                    </ul>
-                    <a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a>
-                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                
+
+                <div class="taskbutton">
+                    <p>@x.Task</p>
+                    <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
+                    <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
+                </div>
             }
         }
 
-        </div>
+    </div>
     <div class="div9">
         <h3>QUADRANT 4</h3>
         @foreach (var x in Model)
         {
             @if (x.Quadrant == 4)
             {
-                <ul>
-                    <li>@x.Task</li>
-                </ul>
-                    <a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a>
-                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
-                
+
+                <div class="taskbutton">
+                    <p>@x.Task</p>
+                    <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
+                    <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
+                </div>
             }
         }
 
-        </div>
+    </div>
 </div>
 
 

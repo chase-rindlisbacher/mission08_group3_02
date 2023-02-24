@@ -65,15 +65,15 @@ namespace mission08_group3_02.Controllers
         [HttpGet] // get delete
         public IActionResult Delete(int id)
         {
-            var entry = TaskAppContext.Responses.Single(x => x.TaskId == id);
+            var entry = _taskContext.Responses.Single(x => x.TaskId == id);
             return View(entry);
         }
 
         [HttpPost] // post delete
         public IActionResult Delete(TaskResponse entry)
         {
-            TaskAppContext.Responses.Remove(entry);
-            int v = TaskAppContext.SaveChanges();
+            _taskContext.Responses.Remove(entry);
+            int v = _taskContext.SaveChanges();
             return RedirectToAction("Index"); // redirect with info to the movie list
         }
     }
