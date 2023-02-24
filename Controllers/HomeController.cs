@@ -12,11 +12,10 @@ namespace mission08_group3_02.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private TaskAppContext TaContext { get; set; }
-        public HomeController(ILogger<HomeController> logger,TaskAppContext someName)
+
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            TaContext = someName;
         }
 
         public IActionResult Index()
@@ -24,7 +23,7 @@ namespace mission08_group3_02.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult AddEditTask()
         {
             return View();
         }
