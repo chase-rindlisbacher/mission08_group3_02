@@ -1,14 +1,17 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Add/Edit Tasks";
 }
 
-<form method="post">
     <label for="Task">Task:</label><br />
-    <input required />
-    <label for="DueDate">Task:</label><br />
-    <input />
+    <input  required />
+
+    <label for="DueDate">Due Date:</label><br />
+    <input  type="date"/>
+
     <label for="Quadrant">Quadrant:</label><br />
-    <input required />
+    <input  required />
+
     <label for="Category">Category:</label><br />
     <select>
         <option>Home</option>
@@ -16,7 +19,10 @@
         <option>Work</option>
         <option>Church</option>
     </select>
+
     <label for="Completed">Completed:</label><br />
     <input type="checkbox" /> <br /> <br />
+
+
     <button type="submit">Submit</button>
 </form>
