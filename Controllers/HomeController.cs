@@ -40,14 +40,30 @@ namespace mission08_group3_02.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddEditTask(TaskResponse task)
+        public IActionResult AddEditTask(TaskResponse taskyboi)
         {
 
-            _taskContext.Add(task);
+            _taskContext.Add(taskyboi);
             _taskContext.SaveChanges();
             return RedirectToAction("Index");
-            
-            
+         
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int TaskID)
+        {
+            ViewBag.Categories = _taskContext.Categories.ToList();
+
+            var task = _taskContext.Responses.Single(x => x.TaskId == TaskID);
+            return View("AddEditTask", task);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(TaskResponse ar)
+        {
+            _taskContext.Update(ar);
+            _taskContext.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Quadrants()
@@ -63,9 +79,9 @@ namespace mission08_group3_02.Controllers
 
         // DELETE
         [HttpGet] // get delete
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int TaskID)
         {
-            var entry = _taskContext.Responses.Single(x => x.TaskId == id);
+            var entry = _taskContext.Responses.Single(x => x.TaskId == TaskID);
             return View(entry);
         }
 

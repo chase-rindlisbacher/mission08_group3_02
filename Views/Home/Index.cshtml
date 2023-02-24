@@ -26,12 +26,11 @@
         {
             @if (x.Quadrant == 1)
                 {
-
-                <div class="taskbutton">        
-                        <p>@x.Task</p>
-                        <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
-                        <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
-                </div>
+                        <ul>
+                            <li>@x.Task</li>
+                        </ul>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
                     
                 }
             
@@ -44,12 +43,12 @@
         {
             @if (x.Quadrant == 2)
             {
-
-                <div class="taskbutton">
-                    <p>@x.Task</p>
-                    <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
-                    <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
-                </div>
+                    <ul>
+                        <li>@x.Task</li>
+                    </ul>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
+                
             }
         }
 
@@ -63,12 +62,12 @@
         {
             @if (x.Quadrant == 3)
             {
-
-                <div class="taskbutton">
-                    <p>@x.Task</p>
-                    <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
-                    <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
-                </div>
+                    <ul>
+                        <li>@x.Task</li>
+                    </ul>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
+                
             }
         }
 
@@ -79,12 +78,12 @@
         {
             @if (x.Quadrant == 4)
             {
-
-                <div class="taskbutton">
-                    <p>@x.Task</p>
-                    <button asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</button>
-                    <button asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</button>
-                </div>
+                <ul>
+                    <li>@x.Task</li>
+                </ul>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
+                
             }
         }
 

@@ -5,26 +5,26 @@
 @model mission08_group3_02.Models.TaskResponse;
 
 
-<form method="post">
+<form method="post" class="text-center">
     <label for="Task">Task:</label><br />
-    <input asp-for="Task" required />
+    <input id="Task" asp-for="Task" required /><br /><br />
 
     <label for="DueDate">Due Date:</label><br />
-    <input asp-for="DueDate" type="date"/>
+    <input id="DueDate" asp-for="DueDate" type="date"/><br /><br />
 
     <label for="Quadrant">Quadrant:</label><br />
-    <input asp-for="Quadrant" required />
+    <input id="Quadrant" asp-for="Quadrant" required /><br /><br />
 
     <label for="Category">Category:</label><br />
-    <select asp-for="CategoryId">
+    <select id="Category" asp-for="CategoryId">
         <option value="1">Home</option>
         <option value="2">School</option>
         <option value="3">Work</option>
         <option value="4">Church</option>
-    </select>
+    </select><br /><br />
 
-    <label for="Completed">Completed:</label><br />
-    <input asp-for="Completed" type="checkbox" /> <br /> <br />
+    <label for="Completed">Completed:</label><br /><br />
+    <input id="Completed" asp-for="Completed" type="checkbox" /> <br /> <br />
 
 
     <button type="submit">Submit</button>
