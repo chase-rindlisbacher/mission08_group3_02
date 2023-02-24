@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using mission08_group3_02.Models;
 using System;
@@ -11,28 +12,42 @@ namespace mission08_group3_02.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        
 
-        private readonly ILogger<HomeController> _logger;
-        private TaskAppContext TaskContext { get; set; }
-        public HomeController(ILogger<HomeController> logger, TaskAppContext someName)
+        private TaskAppContext _taskContext { get; set; }
+
+        public HomeController(TaskAppContext taskContext)
         {
-            _logger = logger;
-            TaContext = someName;
+            _taskContext = taskContext;
         }
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+
+        
 
         public IActionResult Index()
         {
+            var tasks = _taskContext.Responses
+                .Include(x => x.Category)
+                .ToList();
+            ViewBag.Categories = _taskContext.Categories.ToList();
+            return View(tasks);
+        }
+
+        [HttpGet]
+        public IActionResult AddEditTask()
+        {
+            ViewBag.Category = _taskContext.Categories.ToList();
             return View();
         }
 
-        public IActionResult AddEditTask()
+        [HttpPost]
+        public IActionResult AddEditTask(TaskResponse task)
         {
-            return View();
+
+            _taskContext.Add(task);
+            _taskContext.SaveChanges();
+            return RedirectToAction("Index");
+            
+            
         }
 
         public IActionResult Quadrants()
