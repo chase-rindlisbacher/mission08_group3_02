@@ -2,26 +2,29 @@
 @{
     ViewData["Title"] = "Add/Edit Tasks";
 }
+@model mission08_group3_02.Models.TaskResponse;
 
+
+<form method="post">
     <label for="Task">Task:</label><br />
-    <input  required />
+    <input asp-for="Task" required />
 
     <label for="DueDate">Due Date:</label><br />
-    <input  type="date"/>
+    <input asp-for="DueDate" type="date"/>
 
     <label for="Quadrant">Quadrant:</label><br />
-    <input  required />
+    <input asp-for="Quadrant" required />
 
     <label for="Category">Category:</label><br />
-    <select>
-        <option>Home</option>
-        <option>School</option>
-        <option>Work</option>
-        <option>Church</option>
+    <select asp-for="CategoryId">
+        <option value="1">Home</option>
+        <option value="2">School</option>
+        <option value="3">Work</option>
+        <option value="4">Church</option>
     </select>
 
     <label for="Completed">Completed:</label><br />
-    <input type="checkbox" /> <br /> <br />
+    <input asp-for="Completed" type="checkbox" /> <br /> <br />
 
 
     <button type="submit">Submit</button>

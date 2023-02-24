@@ -23,12 +23,16 @@
         <h3>QUADRANT 1</h3>
         @foreach (var x in Model)
         {
-            <ul>
-                <li>@x.Task</li>
-
-                <li><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a></li>
-                <li><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></li>
-            </ul>
+            @if (x.Quadrant == 1)
+                {
+                        <ul>
+                            <li>@x.Task</li>
+                        </ul>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                    
+                }
+            
         }
 
     </div>
@@ -36,15 +40,18 @@
         <h3>QUADRANT 2</h3>
         @foreach (var x in Model)
         {
-            <ul>
-                <li>@x.Task</li>
-
-                <li><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a></li>
-                <li><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></li>
-            </ul>
+            @if (x.Quadrant == 2)
+            {
+                    <ul>
+                        <li>@x.Task</li>
+                    </ul>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                
+            }
         }
 
-    </div>
+        </div>
     <div class="div7">
         <h3 class="rotate">NOT IMPORTANT</h3>
     </div>
@@ -52,28 +59,34 @@
         <h3>QUADRANT 3</h3>
         @foreach (var x in Model)
         {
-            <ul>
-                <li>@x.Task</li>
-
-                <li><a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a></li>
-                <li><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></li>
-            </ul>
+            @if (x.Quadrant == 3)
+            {
+                    <ul>
+                        <li>@x.Task</li>
+                    </ul>
+                    <a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                
+            }
         }
 
-    </div>
+        </div>
     <div class="div9">
         <h3>QUADRANT 4</h3>
         @foreach (var x in Model)
         {
-            <ul>
-                <li>@x.Task</li>
-
-                <li><a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a></li>
-                <li><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></li>
-            </ul>
+            @if (x.Quadrant == 4)
+            {
+                <ul>
+                    <li>@x.Task</li>
+                </ul>
+                    <a asp-controller="Home" asp-action="Update" asp-route-id="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a>
+                
+            }
         }
 
-    </div>
+        </div>
 </div>
 
 
