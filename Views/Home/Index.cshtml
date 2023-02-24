@@ -27,7 +27,7 @@
         @*Will populate individual quadrant with tasks that were stated to be in that quadrant. Same thing for each quadrant*@
         @foreach (var x in Model)
         {
-            @if (x.Quadrant == 1)
+            @if (x.Quadrant == 1 && x.Completed == false)
                 {
                         <ul>
                             <li>@x.Task</li>
@@ -44,7 +44,7 @@
         <h3>QUADRANT 2</h3>
         @foreach (var x in Model)
         {
-            @if (x.Quadrant == 2)
+            @if (x.Quadrant == 2 && x.Completed == false)
             {
                     <ul>
                         <li>@x.Task</li>
@@ -63,7 +63,7 @@
         <h3>QUADRANT 3</h3>
         @foreach (var x in Model)
         {
-            @if (x.Quadrant == 3)
+            @if (x.Quadrant == 3 && x.Completed == false)
             {
                     <ul>
                         <li>@x.Task</li>
@@ -79,7 +79,7 @@
         <h3>QUADRANT 4</h3>
         @foreach (var x in Model)
         {
-            @if (x.Quadrant == 4)
+            @if (x.Quadrant == 4 && x.Completed == false)
             {
                 <ul>
                     <li>@x.Task</li>
