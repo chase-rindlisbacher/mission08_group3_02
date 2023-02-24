@@ -3,6 +3,7 @@
 }
 
 @model List<TaskResponse>
+@*Chase Rindlisbacher, Isabelle Sampson, Eduardo Rogriguez, and James Leer Section 3 Group 02*@
 
 <div class="text-center">
     <h1 class="display-4">Stephen Covey's Time Management Matrix</h1>
@@ -21,7 +22,9 @@
         <h6>IMPORTANT</h6>
     </div>
     <div class="div5">
+        @*Will make 4 quadrants for different levels of importance and urgency*@
         <h3>QUADRANT 1</h3>
+        @*Will populate individual quadrant with tasks that were stated to be in that quadrant. Same thing for each quadrant*@
         @foreach (var x in Model)
         {
             @if (x.Quadrant == 1)
@@ -29,8 +32,8 @@
                         <ul>
                             <li>@x.Task</li>
                         </ul>
-                        <button asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</button>
-                        <button asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</button>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
                     
                 }
             
@@ -46,8 +49,8 @@
                     <ul>
                         <li>@x.Task</li>
                     </ul>
-                    <button asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</button>
-                    <button asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</button>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
                 
             }
         }
@@ -65,8 +68,8 @@
                     <ul>
                         <li>@x.Task</li>
                     </ul>
-                    <button asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</button>
-                    <button asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</button>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
                 
             }
         }
@@ -81,8 +84,8 @@
                 <ul>
                     <li>@x.Task</li>
                 </ul>
-                    <button asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</button>
-                    <button asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</button>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-TaskID="@x.TaskId">Update</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-TaskID="@x.TaskId">Delete</a>
                 
             }
         }

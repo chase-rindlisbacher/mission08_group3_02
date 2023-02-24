@@ -22,7 +22,7 @@ namespace mission08_group3_02.Controllers
         }
 
         
-
+        /*Home page default view where your tasks to do will be listed out*/
         public IActionResult Index()
         {
             var tasks = _taskContext.Responses
@@ -32,23 +32,32 @@ namespace mission08_group3_02.Controllers
             return View(tasks);
         }
 
+        /*Get method to render page to add tasks to do*/
         [HttpGet]
         public IActionResult AddEditTask()
         {
             ViewBag.Category = _taskContext.Categories.ToList();
             return View();
         }
-
+        /*Post method to submit the tasks and update the database*/
         [HttpPost]
         public IActionResult AddEditTask(TaskResponse taskyboi)
         {
-
-            _taskContext.Add(taskyboi);
-            _taskContext.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _taskContext.Add(taskyboi);
+                _taskContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                BadRequest(ModelState);
+                return View(taskyboi);
+            }
          
         }
 
+        /*Get method to edit a single task from the database*/
         [HttpGet]
         public IActionResult Edit(int TaskID)
         {
@@ -58,6 +67,7 @@ namespace mission08_group3_02.Controllers
             return View("AddEditTask", task);
         }
 
+        /*Post method to update the single task from the database*/
         [HttpPost]
         public IActionResult Edit(TaskResponse ar)
         {
@@ -66,6 +76,7 @@ namespace mission08_group3_02.Controllers
             return RedirectToAction("Index");
         }
 
+        /**/
         public IActionResult Quadrants()
         {
             return View();

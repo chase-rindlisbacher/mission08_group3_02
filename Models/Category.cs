@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace mission08_group3_02.Models
 {
+    /*Will make a Category table in the database*/
     public class Category
     {
         [Key]
