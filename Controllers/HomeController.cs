@@ -38,5 +38,21 @@ namespace mission08_group3_02.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // DELETE
+        [HttpGet] // get delete
+        public IActionResult Delete(int id)
+        {
+            var entry = TaskAppContext.Responses.Single(x => x.TaskId == id);
+            return View(entry);
+        }
+
+        [HttpPost] // post delete
+        public IActionResult Delete(TaskResponse entry)
+        {
+            TaskAppContext.Responses.Remove(entry);
+            int v = TaskAppContext.SaveChanges();
+            return RedirectToAction("Index"); // redirect with info to the movie list
+        }
     }
 }
