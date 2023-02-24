@@ -12,10 +12,11 @@ namespace mission08_group3_02.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private TaskAppContext TaContext { get; set; }
+        public HomeController(ILogger<HomeController> logger,TaskAppContext someName)
         {
             _logger = logger;
+            TaContext = someName;
         }
 
         public IActionResult Index()
